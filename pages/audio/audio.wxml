@@ -1,0 +1,23 @@
+<audio src="{{src}}" id="myAudio" bindtimeupdate="update"></audio>
+<view class='music'>
+  <view class='ctrls'>
+    <view class='progress'>
+      <text>{{currentTime}}</text>
+      <slider max='{{max}}' value='{{value}}' bindchanging='changing' >        </slider>
+      <text>{{allTime}}</text>
+    </view>
+    <view class='btns'>
+      <image src='../../images/music/previous.png' bindtap='prev'></image>
+      <image src='{{playIcon}}' bindtap='play'></image>
+      <image src='../../images/music/next.png' bindtap='next'></image>
+    </view>
+  </view>
+
+  <view >
+    <swiper circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='bg' >
+        <swiper-item wx:for='{{imgs}}' wx:key >
+            <image src='{{item}}' height='100%'></image>
+        </swiper-item>
+    </swiper> 
+  </view>
+</view>
